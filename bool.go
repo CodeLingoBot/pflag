@@ -36,7 +36,7 @@ func (f *FlagSet) BoolVar(p *bool, name string, value bool, usage string) {
 	f.VarP(newBoolValue(value, p), name, "", usage)
 }
 
-// Like BoolVar, but accepts a shorthand letter that can be used after a single dash.
+// BoolVarP: Like BoolVar, but accepts a shorthand letter that can be used after a single dash.
 func (f *FlagSet) BoolVarP(p *bool, name, shorthand string, value bool, usage string) {
 	f.VarP(newBoolValue(value, p), name, shorthand, usage)
 }
@@ -47,7 +47,7 @@ func BoolVar(p *bool, name string, value bool, usage string) {
 	CommandLine.VarP(newBoolValue(value, p), name, "", usage)
 }
 
-// Like BoolVar, but accepts a shorthand letter that can be used after a single dash.
+// BoolVarP: Like BoolVar, but accepts a shorthand letter that can be used after a single dash.
 func BoolVarP(p *bool, name, shorthand string, value bool, usage string) {
 	CommandLine.VarP(newBoolValue(value, p), name, shorthand, usage)
 }
@@ -60,7 +60,7 @@ func (f *FlagSet) Bool(name string, value bool, usage string) *bool {
 	return p
 }
 
-// Like Bool, but accepts a shorthand letter that can be used after a single dash.
+// BoolP: Like Bool, but accepts a shorthand letter that can be used after a single dash.
 func (f *FlagSet) BoolP(name, shorthand string, value bool, usage string) *bool {
 	p := new(bool)
 	f.BoolVarP(p, name, shorthand, value, usage)
@@ -73,7 +73,7 @@ func Bool(name string, value bool, usage string) *bool {
 	return CommandLine.BoolP(name, "", value, usage)
 }
 
-// Like Bool, but accepts a shorthand letter that can be used after a single dash.
+// BoolP: Like Bool, but accepts a shorthand letter that can be used after a single dash.
 func BoolP(name, shorthand string, value bool, usage string) *bool {
 	return CommandLine.BoolP(name, shorthand, value, usage)
 }

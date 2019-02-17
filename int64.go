@@ -27,7 +27,7 @@ func (f *FlagSet) Int64Var(p *int64, name string, value int64, usage string) {
 	f.VarP(newInt64Value(value, p), name, "", usage)
 }
 
-// Like Int64Var, but accepts a shorthand letter that can be used after a single dash.
+// Int64VarP: Like Int64Var, but accepts a shorthand letter that can be used after a single dash.
 func (f *FlagSet) Int64VarP(p *int64, name, shorthand string, value int64, usage string) {
 	f.VarP(newInt64Value(value, p), name, shorthand, usage)
 }
@@ -38,7 +38,7 @@ func Int64Var(p *int64, name string, value int64, usage string) {
 	CommandLine.VarP(newInt64Value(value, p), name, "", usage)
 }
 
-// Like Int64Var, but accepts a shorthand letter that can be used after a single dash.
+// Int64VarP: Like Int64Var, but accepts a shorthand letter that can be used after a single dash.
 func Int64VarP(p *int64, name, shorthand string, value int64, usage string) {
 	CommandLine.VarP(newInt64Value(value, p), name, shorthand, usage)
 }
@@ -51,7 +51,7 @@ func (f *FlagSet) Int64(name string, value int64, usage string) *int64 {
 	return p
 }
 
-// Like Int64, but accepts a shorthand letter that can be used after a single dash.
+// Int64P: Like Int64, but accepts a shorthand letter that can be used after a single dash.
 func (f *FlagSet) Int64P(name, shorthand string, value int64, usage string) *int64 {
 	p := new(int64)
 	f.Int64VarP(p, name, shorthand, value, usage)
@@ -64,7 +64,7 @@ func Int64(name string, value int64, usage string) *int64 {
 	return CommandLine.Int64P(name, "", value, usage)
 }
 
-// Like Int64, but accepts a shorthand letter that can be used after a single dash.
+// Int64P: Like Int64, but accepts a shorthand letter that can be used after a single dash.
 func Int64P(name, shorthand string, value int64, usage string) *int64 {
 	return CommandLine.Int64P(name, shorthand, value, usage)
 }

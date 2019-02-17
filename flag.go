@@ -390,7 +390,7 @@ func (f *FlagSet) Var(value Value, name string, usage string) {
 	f.VarP(value, name, "", usage)
 }
 
-// Like Var, but accepts a shorthand letter that can be used after a single dash.
+// VarP: Like Var, but accepts a shorthand letter that can be used after a single dash.
 func (f *FlagSet) VarP(value Value, name, shorthand, usage string) {
 	// Remember the default value as a string; it won't change.
 	flag := &Flag{name, shorthand, usage, value, value.String()}
@@ -434,7 +434,7 @@ func Var(value Value, name string, usage string) {
 	CommandLine.VarP(value, name, "", usage)
 }
 
-// Like Var, but accepts a shorthand letter that can be used after a single dash.
+// VarP: Like Var, but accepts a shorthand letter that can be used after a single dash.
 func VarP(value Value, name, shorthand, usage string) {
 	CommandLine.VarP(value, name, shorthand, usage)
 }
@@ -586,7 +586,7 @@ func Parse() {
 	CommandLine.Parse(os.Args[1:])
 }
 
-// Whether to support interspersed option/non-option arguments.
+// SetInterspersed: Whether to support interspersed option/non-option arguments.
 func SetInterspersed(interspersed bool) {
 	CommandLine.SetInterspersed(interspersed)
 }
@@ -610,7 +610,7 @@ func NewFlagSet(name string, errorHandling ErrorHandling) *FlagSet {
 	return f
 }
 
-// Whether to support interspersed option/non-option arguments.
+// SetInterspersed: Whether to support interspersed option/non-option arguments.
 func (f *FlagSet) SetInterspersed(interspersed bool) {
 	f.interspersed = interspersed
 }

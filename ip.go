@@ -32,7 +32,7 @@ func (f *FlagSet) IPVar(p *net.IP, name string, value net.IP, usage string) {
 	f.VarP(newIPValue(value, p), name, "", usage)
 }
 
-// Like IPVar, but accepts a shorthand letter that can be used after a single dash.
+// IPVarP: Like IPVar, but accepts a shorthand letter that can be used after a single dash.
 func (f *FlagSet) IPVarP(p *net.IP, name, shorthand string, value net.IP, usage string) {
 	f.VarP(newIPValue(value, p), name, shorthand, usage)
 }
@@ -43,7 +43,7 @@ func IPVar(p *net.IP, name string, value net.IP, usage string) {
 	CommandLine.VarP(newIPValue(value, p), name, "", usage)
 }
 
-// Like IPVar, but accepts a shorthand letter that can be used after a single dash.
+// IPVarP: Like IPVar, but accepts a shorthand letter that can be used after a single dash.
 func IPVarP(p *net.IP, name, shorthand string, value net.IP, usage string) {
 	CommandLine.VarP(newIPValue(value, p), name, shorthand, usage)
 }
@@ -56,7 +56,7 @@ func (f *FlagSet) IP(name string, value net.IP, usage string) *net.IP {
 	return p
 }
 
-// Like IP, but accepts a shorthand letter that can be used after a single dash.
+// IPP: Like IP, but accepts a shorthand letter that can be used after a single dash.
 func (f *FlagSet) IPP(name, shorthand string, value net.IP, usage string) *net.IP {
 	p := new(net.IP)
 	f.IPVarP(p, name, shorthand, value, usage)
@@ -69,7 +69,7 @@ func IP(name string, value net.IP, usage string) *net.IP {
 	return CommandLine.IPP(name, "", value, usage)
 }
 
-// Like IP, but accepts a shorthand letter that can be used after a single dash.
+// IPP: Like IP, but accepts a shorthand letter that can be used after a single dash.
 func IPP(name, shorthand string, value net.IP, usage string) *net.IP {
 	return CommandLine.IPP(name, shorthand, value, usage)
 }
